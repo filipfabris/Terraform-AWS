@@ -1,0 +1,6 @@
+chmod 400 my_aws.pem
+# .pem key has to have at least 400 permission
+
+ssh -i "my_aws.pem" ec2-user@54.226.156.98  
+# connecting to created ec2 instance
+
