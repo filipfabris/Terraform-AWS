@@ -13,8 +13,6 @@ variable "region" {
 
 
 
-
-
 variable "web_ami" {
     description = "AMI for Web instances"
     type = string
@@ -32,8 +30,6 @@ variable "web_hostname" {
     type = string
     default = "alation-web"
 }
-
-
 
 
 
