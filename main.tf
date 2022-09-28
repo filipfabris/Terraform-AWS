@@ -9,6 +9,7 @@ resource "aws_security_group" "test_security_group" {
     name = "nova"
     description = "Created via Terraform"
 
+    #In traffic
     ingress {
         from_port = 22
         to_port = 22
@@ -21,6 +22,15 @@ resource "aws_security_group" "test_security_group" {
         to_port = 80
         protocol = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
+    }
+
+    #Out traffic, allow all -- SECURITY, change
+    egress {
+        from_port        = 0
+        to_port          = 0
+        protocol         = "-1"
+        cidr_blocks      = ["0.0.0.0/0"]
+        ipv6_cidr_blocks = ["::/0"]
     }
 }
 
